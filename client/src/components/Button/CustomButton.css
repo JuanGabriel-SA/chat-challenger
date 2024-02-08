@@ -1,0 +1,13 @@
+.custom-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    height: 40px;
+    padding: 20px;
+    width: 90px;
+    background-color: hsl(238, 40%, 52%);
+    border: none;
+    border-radius: 10px;
+}

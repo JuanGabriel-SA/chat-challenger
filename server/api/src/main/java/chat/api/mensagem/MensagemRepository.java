@@ -1,2 +1,7 @@
-package chat.api.mensagem;public interface MensagemRepository {
+package chat.api.mensagem;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MensagemRepository extends JpaRepository<Mensagem, Long> {
+
 }
