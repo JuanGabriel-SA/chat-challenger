@@ -1,0 +1,15 @@
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\domain\voto\DadosUpvote.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\controller\VotoController.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\domain\voto\VotoRepository.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\domain\usuario\Usuario.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\security\CorsConfiguration.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\domain\mensagem\DadosMensagem.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\ApiApplication.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\domain\mensagem\DadosAtualizacaoMensagem.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\domain\mensagem\MensagemRepository.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\controller\UsuarioController.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\infra\TratadorDeErros.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\domain\mensagem\Mensagem.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\domain\usuario\UsuarioRepository.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\controller\MensagemController.java
+F:\Documentos\Projetos\Challenges\challenge-02\my-app\server\api\src\main\java\chat\api\domain\voto\Voto.java
