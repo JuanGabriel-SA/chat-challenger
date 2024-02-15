@@ -16,14 +16,13 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Mensagem {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String content;
 
     private LocalDate created_at;
-
-    private int score;
 
     private Long user_id;
 
@@ -31,10 +30,20 @@ public class Mensagem {
     private String reply_to;
 
     public Mensagem(DadosMensagem dados) {
+        this.id = dados.id();
         this.user_id = dados.user_id();
         this.content = dados.content();
         this.created_at = dados.created_at();
-        this.score = dados.score();
         this.reply_to = dados.reply_to();
+    }
+
+    public void atualizar(DadosAtualizacaoMensagem dados) {
+        if (dados.content() != null) {
+            this.content = dados.content();
+        }
+        
+        if (dados.reply_to() != null) {
+            this.reply_to = dados.reply_to();
+        }
     }
 }

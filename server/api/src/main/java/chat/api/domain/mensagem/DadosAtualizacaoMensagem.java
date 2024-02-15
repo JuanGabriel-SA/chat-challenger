@@ -5,12 +5,7 @@ import jakarta.annotation.Nullable;
 
 import java.time.LocalDate;
 
-public record DadosMensagem(
+public record DadosAtualizacaoMensagem(
         String content,
-        @JsonFormat(pattern = "dd/MM/yyyy")
-        LocalDate created_at,
-        @Nullable
-        int score,
-        Long user_id,
         String reply_to) {
 }
