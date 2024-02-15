@@ -1,0 +1,9 @@
+.message-text h4 b {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-right: 5px;
+    color: hsl(238, 40%, 52%);
+    margin-bottom: 5px;
+  }

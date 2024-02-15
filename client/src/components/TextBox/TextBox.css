@@ -1,0 +1,39 @@
+.text-box {
+    margin-left: 20px;
+    margin-right: 20px;
+    resize: none;
+    width: 90%;
+    margin: 0px 15px 0px 15px;
+    border-radius: 15px;
+    border: 1px solid hsl(238, 40%, 52%);
+    cursor: text;
+    display: inline;
+    outline: none;
+    word-break: break-all;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.reply-mark, .reply-text {
+    display: inline;
+}
+
+.reply-mark {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-right: 5px;
+    color: hsl(238, 40%, 52%);
+    margin-bottom: 5px;
+}
+
+.reply-text {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    outline: none;
+}

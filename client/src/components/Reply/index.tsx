@@ -1,5 +1,5 @@
 import React, { HTMLAttributes, useEffect, useState } from 'react';
-import './Message.css';
+import './Reply.css';
 import { FaMinus, FaPen, FaPlus, FaReply, FaTrash } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import CustomButton from '../Button';
@@ -9,7 +9,6 @@ import Avatar from '../Avatar';
 import TextBox from '../TextBox';
 import { setDeletingMessage } from '../../store/reducers/deletingMessage';
 import { setMessages } from '../../store/reducers/messageSlice';
-import ReplyComponent from '../Reply';
 
 interface MessageProps extends HTMLAttributes<HTMLDivElement> {
     upvotes: number,
@@ -38,18 +37,23 @@ interface Vote {
     comment_id: number,
 }
 
-const Message = ({ onEdit, message_id, user_id, upvotes, user_image, user_name, created_at, children, className, ...rest }: MessageProps) => {
+const Reply = ({ onEdit, message_id, user_id, upvotes, user_image, user_name, created_at, children, className, ...rest }: MessageProps) => {
 
     const currentUser = useAppSelector(state => state.currentUserState);
     const [editMode, setEditMode] = useState<boolean>(false);
     const [editetText, setEditedText] = useState<string>(children);
     const [isReplying, setIsReplying] = useState<boolean>(false);
     const [replyContent, setReplyContent] = useState<string>('');
-    const [allReplies, setAllReplies] = useState<Reply[]>([])
+    const [allReplies, setAllReplies] = useState<Reply[]>([]);
+    const [userMark, setUserMark] = useState<string>('');
     const allUsers = useAppSelector(state => state.userState.users);
     const [allVotes, setAllVotes] = useState<Vote[]>([]);
     const allMessages = useAppSelector(state => state.messageState.messages);
     const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        getReplies();
+    }, [])
 
     async function getReplies() {
         const replies = await fetch(`http://localhost:8080/chat/get-replies/${message_id}`).then(res => res.json());
@@ -58,7 +62,7 @@ const Message = ({ onEdit, message_id, user_id, upvotes, user_image, user_name, 
 
     useEffect(() => {
         getReplies();
-        getAllVotes();
+        getReplyMark();
     }, [allMessages])
 
     async function upScore() {
@@ -168,7 +172,7 @@ const Message = ({ onEdit, message_id, user_id, upvotes, user_image, user_name, 
             });
             setReplyContent('');
             setIsReplying(false);
-            await getMessages();
+            getMessages();
             getReplies();
         }
     }
@@ -194,28 +198,16 @@ const Message = ({ onEdit, message_id, user_id, upvotes, user_image, user_name, 
     }
 
     function getUpvotes(commentId: number) {
-        console.log(allVotes)
         let countVotes = allVotes.filter(item => item.comment_id == commentId);
         return countVotes.length;
     }
 
-    function createReplies() {
-        if (allReplies.length > 0) {
-            return allReplies.map(item =>
-                <ReplyComponent
-                    user_id={getUser(item.user_id).id}
-                    key={item.id}
-                    onEdit={() => attContent()}
-                    message_id={item.id}
-                    user_name={getUser(item.user_id).username}
-                    upvotes={getUpvotes(item.id)}
-                    user_image={getUser(item.user_id).image}
-                    created_at={item.created_at}>
-                    {item.content}
-                </ReplyComponent>
-            )
-        } else {
-            return null;
+    function getReplyMark() {
+        const message = allMessages.filter(item => item.id == message_id)[0];
+        if (message !== undefined) {
+            const repliedMessage = allMessages.filter(item => item.id == message.reply_to)[0];
+            const userMark = getUser(repliedMessage.user_id).username;
+            setUserMark(userMark);
         }
     }
 
@@ -234,7 +226,10 @@ const Message = ({ onEdit, message_id, user_id, upvotes, user_image, user_name, 
                 }
             }}
 
-            className='message-container'>
+            className='message-container reply-container'>
+            {allReplies.length > 0 &&
+                <div className='reply-line'></div>
+            }
             <div className="message-body">
                 <div className='upvote-buttons'>
                     <span onClick={e => upScore()}>
@@ -251,9 +246,6 @@ const Message = ({ onEdit, message_id, user_id, upvotes, user_image, user_name, 
                     <div className='message-header'>
                         <img className='user-image' src={user_image} width={30} height={30} />
                         <h3>{user_name}</h3>
-                        {currentUser.id == user_id &&
-                        <span>you</span>
-                        }
                         <h4>{formatDate(created_at)}</h4>
                         {currentUser.id !== user_id ?
                             <button className='reply-button' onClick={e => replyMode()}>
@@ -281,7 +273,10 @@ const Message = ({ onEdit, message_id, user_id, upvotes, user_image, user_name, 
                             :
                             <motion.h4 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}>{children}</motion.h4>
+                                exit={{ opacity: 0 }}>
+                                <b>@{userMark}</b>
+                                {children}
+                            </motion.h4>
                         }
                     </motion.div>
                     <div className='message-footer'>
@@ -337,17 +332,25 @@ const Message = ({ onEdit, message_id, user_id, upvotes, user_image, user_name, 
                 }
             </AnimatePresence>
             <AnimatePresence>
-                {allReplies.length > 0 &&
-                    <div className='replies-section'>
-                        <div className='reply-line'></div>
-                        <div className="replies">
-                            {createReplies()}
-                        </div>
-                    </div>
-                }
+                {allReplies.length > 0 && (
+                    allReplies.map(item =>
+                        <Reply
+                            className='reply-message'
+                            user_id={getUser(item.user_id).id}
+                            key={item.id}
+                            onEdit={() => attContent()}
+                            message_id={item.id}
+                            user_name={getUser(item.user_id).username}
+                            upvotes={getUpvotes(item.id)}
+                            user_image={getUser(item.user_id).image}
+                            created_at={item.created_at}>
+                            {item.content}
+                        </Reply>
+                    )
+                )}
             </AnimatePresence>
         </motion.div>
     )
 }
 
-export default Message;
+export default Reply;

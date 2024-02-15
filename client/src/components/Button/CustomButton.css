@@ -10,4 +10,10 @@
     background-color: hsl(238, 40%, 52%);
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    transition: ease-out 0.2s;
+}
+
+.custom-button:hover {
+    opacity: 0.6;
 }

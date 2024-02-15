@@ -1,4 +1,4 @@
-package chat.api.voto;
+package chat.api.domain.voto;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,8 +22,6 @@ public class Voto {
     private Long comment_id;
 
     private Long user_id;
-
-    private LocalDate data_upvote;
 
     public Voto(DadosUpvote dados) {
         this.id = dados.id();

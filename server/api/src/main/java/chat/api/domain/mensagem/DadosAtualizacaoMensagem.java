@@ -1,4 +1,4 @@
-package chat.api.mensagem;
+package chat.api.domain.mensagem;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.annotation.Nullable;

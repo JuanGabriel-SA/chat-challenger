@@ -1,4 +1,4 @@
-package chat.api.usuario;
+package chat.api.domain.usuario;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

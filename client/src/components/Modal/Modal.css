@@ -1,0 +1,63 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+}
+
+.modal-title {
+    font-weight: 500;
+    color: hsl(213, 9%, 23%);
+    font-size: 1.4rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-body {
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 330px;
+    max-height: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 1 !important;
+}
+
+.modal-footer button {
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    margin-right: 15px;
+    font-weight: 500;
+    width: 150px;
+    cursor: pointer;
+    transition: ease-out 0.2s;
+}
+
+.modal-footer button:hover {
+    opacity: 0.7;
+}
+
+.modal-footer {
+    margin-bottom: 15px;
+}
+
+.cancel-button {
+    background-color: hsl(219, 7%, 47%);
+}
+
+.submit-button {
+    background-color: hsl(357, 96%, 66%);
+}

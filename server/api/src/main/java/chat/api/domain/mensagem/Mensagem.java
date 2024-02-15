@@ -1,4 +1,4 @@
-package chat.api.mensagem;
+package chat.api.domain.mensagem;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;

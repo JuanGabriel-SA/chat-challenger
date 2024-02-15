@@ -1,0 +1,302 @@
+.message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: inherit;
+}
+
+.message-body {
+    display: flex;
+    background-color: white;
+    width: inherit;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.message-reply-section {
+    display: flex;
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 10px;
+    height: 10vh;
+    border-radius: 10px;
+    margin-top: auto;
+    transform-origin: top;
+}
+
+.message-reply-section textarea {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    resize: none;
+    width: 70%;
+    padding: 10px 30px 10px 30px;
+    margin: 0px 15px 0px 15px;
+    border-radius: 15px;
+    border: 1px solid hsl(238, 40%, 52%);
+    outline: none;
+}
+
+.upvote-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 65px;
+    background-color: hsl(228, 33%, 97%);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.upvote-buttons h5 {
+    margin: 0;
+    color: hsl(238, 40%, 52%);
+}
+
+.upvote-buttons span {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: hsl(240, 22%, 83%);
+}
+
+.message-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 20px;
+    width: 95%;
+}
+
+.message-header h3,
+.message-header h4 {
+    font-family: 'Rubik', sans-serif;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.message-header span {
+    background-color:  hsl(238, 40%, 52%);
+    color: white;
+    padding: 6px;
+    font-size: 13px;
+    height: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+.message-header h3 {
+    color: hsl(212, 24%, 26%);
+    font-weight: 500;
+}
+
+.message-header h4 {
+    color: rgba(0, 0, 0, 0.52);
+    font-weight: 400;
+}
+
+.message-header {
+    display: flex;
+}
+
+.reply-button {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-left: auto;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: hsl(238, 40%, 52%);
+    margin-top: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: ease-out 0.2s;
+}
+
+.reply-button:hover {
+    opacity: 0.6;
+}
+
+.reply-button svg {
+    margin-right: 10px;
+}
+
+.message-text h4 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.669);
+    margin-top: 10px;
+    word-break: break-word;
+}
+
+.message-text textarea {
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    resize: none;
+    width: 85%;
+    padding: 20px;
+    margin: 0px 15px 0px 15px;
+    border-radius: 15px;
+    border: 1px solid hsl(238, 40%, 52%);
+    outline: none;
+    margin-top: 10px;
+    height: 60%;
+}
+
+.edit-delete-buttons,
+.responsive-edit-delete-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+
+.edit-delete-buttons button,
+.responsive-edit-delete-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    height: 30px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: ease-out 0.1s;
+}
+
+.edit-delete-buttons button:hover,
+.responsive-edit-delete-buttons button:hover {
+    opacity: 0.6;
+    ;
+}
+
+.edit-delete-buttons button svg,
+.responsive-edit-delete-buttons button svg {
+    margin-right: 5px;
+}
+
+.delete-button {
+    color: hsl(358, 79%, 66%);
+}
+
+.edit-button {
+    color: #5457b6;
+}
+
+.update-button {
+    justify-self: end;
+    margin-top: 15px;
+}
+
+.replies-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.replies {
+    width: 92%;
+}
+
+.reply-line {
+    border-left: 2px solid #e8e8e8;
+    width: 3.5%;
+    height: 95%;
+}
+
+.responsive-upvote-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 15px;
+    background-color: hsl(228, 33%, 97%);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.responsive-upvote-buttons h5 {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: hsl(238, 40%, 52%);
+}
+
+.responsive-upvote-buttons span {
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: hsl(240, 22%, 83%);
+}
+
+.responsive-reply-button {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-left: auto;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: hsl(238, 40%, 52%);
+    margin-top: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: ease-out 0.2s;
+}
+
+.responsive-reply-button:hover {
+    opacity: 0.6;
+}
+
+.responsive-reply-button svg {
+    margin-right: 10px;
+}
+
+.message-footer {
+    display: flex;
+}
+
+@media (min-width: 1101px) {
+    .message-footer {
+        display: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    .upvote-buttons {
+        display: none;
+    }
+
+    .reply-button {
+        display: none;
+    }
+
+    .edit-delete-buttons {
+        display: none;
+    }
+
+    .reply-button {
+        display: none;
+    }
+
+    .message-text textarea {
+        width: 80%;
+    }
+}

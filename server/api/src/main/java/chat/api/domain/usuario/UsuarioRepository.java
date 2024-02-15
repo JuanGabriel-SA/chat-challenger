@@ -1,4 +1,4 @@
-package chat.api.usuario;
+package chat.api.domain.usuario;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

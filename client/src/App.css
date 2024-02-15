@@ -6,34 +6,134 @@
   background-color: hsl(228, 33%, 97%);
 }
 
+.chat-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  width: 100%;
+  overflow-y: auto;
+  max-height: 70%;
+  margin-top: 50px;
+  overflow-x: hidden;
+  padding-right: 20px;
+}
+
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: start;
   width: 45vw;
-  height: 100%;
+  max-height: 100%;
 }
 
 .send-message-section {
   display: flex;
-  align-self: flex-end;
   background-color: white;
   margin-bottom: 50px;
-  padding: 25px;
-  height: 10vh;
+  height: 120px;
   width: 100%;
   border-radius: 10px;
+  margin-top: auto;
 }
 
+.responsive-send-message-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  margin-bottom: 50px;
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.responsive-send-message-section textarea {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  resize: none;
+  height: 30%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid hsl(238, 40%, 52%);
+  outline: none;
+}
+
+.responsive-send-message-section button {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.responsive-send-message-section img {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.send-message-section-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.send-message-section img {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.send-message-section button {
+  margin-right: 25px;
+  margin-top: 15px;
+}
 
 .send-message-section textarea {
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
   font-weight: 400;
   resize: none;
+  height: 60%;
   width: 70%;
   padding: 10px 30px 10px 30px;
-  margin: 0px 15px 0px 15px;
+  margin: auto 20px auto 20px;
   border-radius: 15px;
   border: 1px solid hsl(238, 40%, 52%);
   outline: none;
+}
+
+.delete-modal h1 {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(62, 62, 62, 0.8);
+  line-height: 22px;
+}
+
+.responsive-send-message-section {
+  
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    width: 80vw;
+  }
+
+  .send-message-section {
+    display: none;
+  }
+}
+
+@media (min-width: 1101px) {
+  .responsive-send-message-section {
+    display: none;
+  }
 }
